@@ -64,7 +64,7 @@ void Game::update()
 void Game::draw()
 {
     for(std::vector<Sprite*>::size_type i = 0;i < m_spriteVec.size();++i){
-        m_spriteVec[i]->draw();
+        m_spriteVec[i]->draw(m_pRender);
     }
 }
 

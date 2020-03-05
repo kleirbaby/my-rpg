@@ -7,7 +7,7 @@ public:
     Player(const LoadParams *pParam);
     ~Player();
 
-    void draw();
+    void draw(SDL_Renderer* pRender);
     void update();
     void clean();
 private:

@@ -4,6 +4,7 @@
 #include <SDL2/SDL_image.h>
 #include <string>
 #include <map>
+#include "../common/Singleton.h"
 
 class TextureManager
 {
@@ -17,3 +18,5 @@ public:
 private:
     std::map<std::string,SDL_Texture*> m_textureMap;
 };
+
+typedef Singleton<TextureManager> TextureManager_Singleton;

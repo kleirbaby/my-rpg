@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "LoadParams.h"
+#include "TextureManager.h"
 
 Player::Player(const LoadParams *pParam)
     :Sprite(pParam)
@@ -19,9 +20,9 @@ Player::~Player()
 
 }
 
-void Player::draw()
+void Player::draw(SDL_Renderer* pRender)
 {
-
+    TextureManager_Singleton().getInstance()->drawFrame(m_textureId,m_x,m_y,m_width,m_height,m_curRow,m_curFrame,pRender);
 }
 
 void Player::update()
