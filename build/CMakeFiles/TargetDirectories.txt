@@ -1,3 +1,0 @@
-/home/kleir/Github/my-rpg/build/CMakeFiles/edit_cache.dir
-/home/kleir/Github/my-rpg/build/CMakeFiles/rebuild_cache.dir
-/home/kleir/Github/my-rpg/build/CMakeFiles/my-rpg.dir

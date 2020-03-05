@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/my-rpg.dir/src/TextureManager.cpp.o CMakeFiles/my-rpg.dir/src/Game.cpp.o CMakeFiles/my-rpg.dir/src/Player.cpp.o CMakeFiles/my-rpg.dir/src/my-rpg.cpp.o  -o my-rpg -lSDL2 -lSDL2_ttf -lSDL2_mixer -lSDL2_image 
