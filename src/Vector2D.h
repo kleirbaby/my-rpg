@@ -57,6 +57,17 @@ public:
         return *this;
     }
 
+    Vector2D operator/(double v)
+    {
+        return Vector2D(m_x / v,m_y / v);
+    }
+
+    Vector2D operator/=(double v)
+    {
+        m_x /= v;
+        m_y /= v;
+        return *this;
+    }
 private:
     double m_x;
     double m_y;
