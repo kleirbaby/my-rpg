@@ -68,6 +68,14 @@ public:
         m_y /= v;
         return *this;
     }
+
+    void normalize()
+    {
+        double l = length();
+        if(l > 0){
+            (*this) *= 1/l;
+        }
+    }
 private:
     double m_x;
     double m_y;

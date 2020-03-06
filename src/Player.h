@@ -1,4 +1,7 @@
+#pragma once
+
 #include "Sprite.h"
+#include "Vector2D.h"
 
 class LoadParams;
 class Player:public Sprite
@@ -18,4 +21,6 @@ private:
     int         m_y;
     int         m_width;
     int         m_height;
+
+    Vector2D    m_pos;
 };
