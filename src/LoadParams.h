@@ -7,7 +7,7 @@ class LoadParams
 public:
     LoadParams(int x,int y,int w,int h,std::string textureId)
         :m_x(x),m_y(y),m_width(w),m_height(h),m_textureId(textureId){}
-    ~LoadParams();
+    ~LoadParams(){}
 
     inline int getX()const { return m_x; }
     inline int getY()const { return m_y; }

@@ -27,8 +27,6 @@ private:
     SDL_Renderer   *m_pRender    = nullptr;
     bool            m_bExit      = false;
 
-    TextureManager_Singleton m_textureMgr;
-
     std::vector<Sprite*>     m_spriteVec;
 };
 

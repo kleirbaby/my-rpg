@@ -27,7 +27,8 @@ void Player::draw(SDL_Renderer* pRender)
 
 void Player::update()
 {
-
+    m_x += 1;
+    m_curFrame = int((SDL_GetTicks()/100)%6);
 }
 
 void Player::clean()

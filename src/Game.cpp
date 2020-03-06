@@ -2,15 +2,20 @@
 #include "../common/Commondef.hpp"
 #include "TextureManager.h"
 #include "Sprite.h"
+#include "Player.h"
+#include "LoadParams.h"
 
 Game::Game()
 {
-
+    LoadParams param1(20,20,120,80,"test1");
+    LoadParams param2(20,20,120,80,"test2");
+    m_spriteVec.push_back(new Player(&param1));
+    m_spriteVec.push_back(new Player(&param2));
 }
 
 Game::~Game()
 {
-    m_textureMgr.clean();
+    TextureManager_Singleton().clean();
 }
 
 bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WINDOW_SHOWN*/)
@@ -36,7 +41,7 @@ bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WIND
     SDL_SetRenderDrawColor(m_pRender,175,175,175,50);
 
     //fixed me
-    if(!m_textureMgr.getInstance()->load("../assets/meinv3.jpeg","beauty",m_pRender)){
+    if(!TextureManager_Singleton().getInstance()->load("../assets/meinv3.jpeg","beauty",m_pRender)){
         dPrint("texture manager load fail\n");
         return false;
     }
@@ -49,7 +54,7 @@ void Game::render()
     SDL_RenderClear(m_pRender);
 
     //fixed me
-    m_textureMgr.getInstance()->draw("beauty",50,40,220,140,m_pRender);
+    TextureManager_Singleton().getInstance()->draw("beauty",50,40,220,140,m_pRender);
 
     SDL_RenderPresent(m_pRender);
 }
