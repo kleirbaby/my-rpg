@@ -6,6 +6,8 @@
 #include <map>
 #include "../common/Singleton.h"
 
+namespace SDL2
+{
 class TextureManager
 {
 public:
@@ -20,3 +22,4 @@ private:
 };
 
 typedef Singleton<TextureManager> TextureManager_Singleton;
+}

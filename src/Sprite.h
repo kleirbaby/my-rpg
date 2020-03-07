@@ -3,6 +3,8 @@
 #include <string>
 #include <SDL2/SDL.h>
 
+namespace SDL2
+{
 class LoadParams;
 class Sprite
 {
@@ -14,3 +16,4 @@ protected:
     Sprite(const LoadParams *pParams){}
     virtual ~Sprite(){}
 };
+}

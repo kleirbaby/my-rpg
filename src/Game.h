@@ -6,6 +6,9 @@
 #include "TextureManager.h"
 #include "../common/Singleton.h"
 
+namespace SDL2
+{
+
 class Sprite;
 class Game
 {
@@ -31,3 +34,5 @@ private:
 };
 
 typedef Singleton<Game> Game_Singleton;
+
+}

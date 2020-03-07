@@ -1,10 +1,11 @@
 #pragma once
 
-#include <SDL2/SDL.h>
-
+namespace SDL2
+{
 class InputHandler
 {
 public:
-    InputHandler();
-    ~InputHandler();
+    InputHandler(){}
+    virtual ~InputHandler(){}
 };
+}

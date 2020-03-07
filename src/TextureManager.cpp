@@ -1,6 +1,8 @@
 #include "TextureManager.h"
 #include "../common/Commondef.hpp"
 
+namespace SDL2
+{
 TextureManager::TextureManager()
 {
 
@@ -72,4 +74,5 @@ bool TextureManager::drawFrame(std::string id,int x,int y,int w,int h,int curRow
         return false;
     }
     return true;
+}
 }

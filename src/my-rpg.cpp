@@ -2,7 +2,7 @@
 
 int main(int argc,char *argv[])
 {  
-    Game_Singleton game;
+    SDL2::Game_Singleton game;
 
     game.getInstance()->init("my-rpg",260,260,640,320);
     game.getInstance()->render();

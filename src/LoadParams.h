@@ -2,6 +2,8 @@
 
 #include <string>
 
+namespace SDL2
+{
 class LoadParams
 {
 public:
@@ -22,3 +24,4 @@ private:
     int         m_width;
     int         m_height;
 };
+}

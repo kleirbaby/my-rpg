@@ -3,11 +3,11 @@
 #include "Sprite.h"
 #include "Vector2D.h"
 
-class LoadParams;
-class Player:public Sprite
+class SDL2::LoadParams;
+class Player:public SDL2::Sprite
 {
 public:
-    Player(const LoadParams *pParam);
+    Player(const SDL2::LoadParams *pParam);
     ~Player();
 
     void draw(SDL_Renderer* pRender);
@@ -20,6 +20,6 @@ private:
     int         m_width;
     int         m_height;
 
-    Vector2D    m_pos;
-    Vector2D    m_vel;
+    SDL2::Vector2D    m_pos;
+    SDL2::Vector2D    m_vel;
 };

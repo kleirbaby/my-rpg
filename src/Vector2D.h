@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+namespace SDL2
+{
 class Vector2D
 {
 public:
@@ -80,3 +82,4 @@ private:
     double m_x;
     double m_y;
 };
+}

@@ -5,10 +5,13 @@
 #include "Player.h"
 #include "LoadParams.h"
 
+namespace SDL2
+{
+
 Game::Game()
 {
-    LoadParams param1(20,20,120,80,"test1");
-    LoadParams param2(20,20,120,80,"test2");
+    SDL2::LoadParams param1(20,20,120,80,"test1");
+    SDL2::LoadParams param2(20,20,120,80,"test2");
     m_spriteVec.push_back(new Player(&param1));
     m_spriteVec.push_back(new Player(&param2));
 }
@@ -101,4 +104,6 @@ void Game::clean()
 void Game::exit()
 {
     m_bExit = true;
+}
+
 }
