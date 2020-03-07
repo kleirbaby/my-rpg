@@ -17,10 +17,9 @@ private:
     std::string m_textureId;
     int         m_curFrame;
     int         m_curRow;
-    int         m_x;
-    int         m_y;
     int         m_width;
     int         m_height;
 
     Vector2D    m_pos;
+    Vector2D    m_vel;
 };
