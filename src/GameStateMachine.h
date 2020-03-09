@@ -2,6 +2,8 @@
 
 #include <vector>
 
+namespace SDL2
+{
 class GameState;
 class GameStateMachine
 {
@@ -12,3 +14,4 @@ public:
 private:
     std::vector<GameState*> m_gameStates;
 };
+}

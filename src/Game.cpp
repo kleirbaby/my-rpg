@@ -5,8 +5,7 @@
 #include "Player.h"
 #include "LoadParams.h"
 
-namespace SDL2
-{
+using namespace SDL2;
 
 Game::Game()
 {
@@ -104,6 +103,4 @@ void Game::clean()
 void Game::exit()
 {
     m_bExit = true;
-}
-
 }

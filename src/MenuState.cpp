@@ -1,5 +1,7 @@
 #include "MenuState.h"
 
+using namespace SDL2;
+
 const std::string MenuState::s_menuId = "MENU";
 
 void MenuState::update()

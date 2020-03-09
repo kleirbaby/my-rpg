@@ -1,7 +1,7 @@
 #include "KyboardHandler.h"
 
-namespace SDL2
-{
+using namespace SDL2;
+
 KeyboardHandler::KeyboardHandler()
 {
 
@@ -9,7 +9,5 @@ KeyboardHandler::KeyboardHandler()
 
 KeyboardHandler::~KeyboardHandler()
 {
-
-}
 
 }

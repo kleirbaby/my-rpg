@@ -2,6 +2,8 @@
 
 #include "GameState.h"
 
+namespace SDL2
+{
 class MenuState:public GameState
 {
 public:
@@ -13,3 +15,4 @@ public:
 private:
     static const std::string s_menuId;
 };
+}
