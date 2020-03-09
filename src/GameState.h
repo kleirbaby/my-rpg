@@ -10,6 +10,6 @@ public:
     virtual bool onEnter()= 0;
     virtual bool onExit() = 0;
     virtual std::string getStateId()const = 0;
-protected:
+    
     virtual ~GameState(){}
 };
