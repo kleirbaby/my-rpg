@@ -8,8 +8,8 @@
 
 namespace SDL2
 {
-
 class Sprite;
+class GameStateMachine;
 class Game
 {
 public:
@@ -31,6 +31,7 @@ private:
     bool            m_bExit      = false;
 
     std::vector<Sprite*>     m_spriteVec;
+    GameStateMachine        *m_machine;
 };
 
 typedef Singleton<Game> Game_Singleton;

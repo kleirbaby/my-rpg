@@ -4,6 +4,8 @@
 #include "Sprite.h"
 #include "Player.h"
 #include "LoadParams.h"
+#include "MenuState.h"
+#include "GameStateMachine.h"
 
 using namespace SDL2;
 
@@ -41,6 +43,9 @@ bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WIND
 
     //set default color
     SDL_SetRenderDrawColor(m_pRender,175,175,175,50);
+
+    m_machine = new GameStateMachine;
+    m_machine->changeState(new MenuState);
 
     //fixed me
     if(!TextureManager_Singleton().getInstance()->load("../assets/meinv3.jpeg","beauty",m_pRender)){
