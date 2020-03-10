@@ -4,23 +4,28 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+static void dLog(const char *fmt,...)
+{
+    char *p = NULL;
+    int size = 0;
+    va_list args;
+                
+    va_start(args,fmt);
+    size = vsnprintf(p,size,fmt,args);
+    va_end(args);
+                    
+    p = (char*)malloc(++size);
+    va_start(args,fmt);
+    size = vsnprintf(p,size,fmt,args);
+    va_end(args);
+                
+    printf(p);
+    free(p); 
+}
+
 #ifdef DEBUG
 #define dPrint(fmt,...) \
-    char *p = NULL; \
-    int size = 0; \
-    va_list args; \
-                    \
-    va_start(args,fmt); \
-    size = vsnprintf(p,size,fmt,args); \
-    va_end(arg); \
-                    \
-    p = malloc(++size); \
-    va_start(args,fmt); \
-    size = vsnprintf(p,size,fmt,args); \
-    va_end(args); \
-                    \
-    printf(p); \
-    free(p);
+   dLog(fmt,__VA_ARGS__)
 #else
 #define dPrint(fmt,...)
 #endif

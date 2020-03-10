@@ -4,13 +4,14 @@
 #include <vector>
 #include <string>
 #include "TextureManager.h"
+#include "InputHandler.h"
 #include "../common/Singleton.h"
 
 namespace SDL2
 {
 class Sprite;
 class GameStateMachine;
-class Game
+class Game:public InputHandler
 {
 public:
     Game();
@@ -22,13 +23,14 @@ public:
     void draw();
     void handleEvents();
     void clean();
-    void exit();
 
     inline SDL_Renderer* getRenderer()const { return m_pRender;}
 private:
+    void keyDownEv(const SDL_Event *ev);
+    void keyUpEv(const SDL_Event *ev);
+private:
     SDL_Window     *m_pWnd       = nullptr;
     SDL_Renderer   *m_pRender    = nullptr;
-    bool            m_bExit      = false;
 
     std::vector<Sprite*>     m_spriteVec;
     GameStateMachine        *m_machine;

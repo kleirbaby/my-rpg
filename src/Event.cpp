@@ -39,9 +39,11 @@ bool Event::loop()
                 mouseMoveEv(&m_ev);
                 break;
             default:
-                dPrint("at the moment,the event cannot be surpport!\n");
+                dLog("at the moment,the event cannot be surpport!\n");
                 break;
             }
         }
     }
+
+    return true;
 }

@@ -1,3 +1,7 @@
+/*
+    FSM:finite state machine.A game has a number of states.
+*/
+
 #pragma once
 
 #include <vector>
@@ -8,6 +12,7 @@ class GameState;
 class GameStateMachine
 {
 public:
+    ~GameStateMachine();
     void pushState(GameState* pState);
     void changeState(GameState* pState);
     void popState();

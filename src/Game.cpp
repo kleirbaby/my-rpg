@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "LoadParams.h"
 #include "MenuState.h"
+#include "PlayState.h"
 #include "GameStateMachine.h"
 
 using namespace SDL2;
@@ -25,19 +26,19 @@ Game::~Game()
 bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WINDOW_SHOWN*/)
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
-        dPrint("sdl init fail\n");
+        dLog("sdl init fail\n");
         return false;
     }
     
     m_pWnd = SDL_CreateWindow(title.c_str(),x,y,w,h,flags);
     if(m_pWnd == NULL){
-        dPrint("create window fail\n");
+        dLog("create window fail\n");
         return false;
     }
 
     m_pRender = SDL_CreateRenderer(m_pWnd,-1,0);
     if(m_pRender == NULL){
-        dPrint("create renderer fail\n");
+        dLog("create renderer fail\n");
         return false;
     }
 
@@ -49,7 +50,7 @@ bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WIND
 
     //fixed me
     if(!TextureManager_Singleton().getInstance()->load("../assets/meinv3.jpeg","beauty",m_pRender)){
-        dPrint("texture manager load fail\n");
+        dLog("texture manager load fail\n");
         return false;
     }
 
@@ -82,20 +83,7 @@ void Game::draw()
 
 void Game::handleEvents()
 {
-    while(!m_bExit){
-
-        SDL_Event event;
-        while(SDL_PollEvent(&event)){
-            switch (event.type)
-            {
-            case SDL_QUIT:
-                exit();
-                break;
-            default:
-                break;
-            }
-        }
-    }
+    loop();
 }
 
 void Game::clean()
@@ -105,7 +93,17 @@ void Game::clean()
     SDL_Quit();
 }
 
-void Game::exit()
+void Game::keyDownEv(const SDL_Event *ev)
 {
-    m_bExit = true;
+    if(ev->key.keysym.sym == SDLK_RETURN){
+        dLog("enter is down\n");
+        m_machine->changeState(new PlayState);
+    }
+}
+
+void Game::keyUpEv(const SDL_Event *ev)
+{
+    if(ev->key.keysym.sym == SDLK_RETURN){
+        dLog("enter is up\n");
+    }
 }

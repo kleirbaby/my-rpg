@@ -18,6 +18,6 @@ link_libraries(
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_definitions("-Wall -g")
+add_definitions("-Wall -g -DDEBUG")
 
 add_executable(my-rpg ${SRC_LIST})

@@ -3,6 +3,17 @@
 
 using namespace SDL2;
 
+GameStateMachine::~GameStateMachine()
+{
+    for(auto state : m_gameStates){
+        if(state != nullptr){
+            delete state;
+            state = nullptr;
+        }
+    }
+    m_gameStates.clear();
+}
+
 void GameStateMachine::pushState(GameState* pState)
 {
     m_gameStates.push_back(pState);
