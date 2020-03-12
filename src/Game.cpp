@@ -26,19 +26,19 @@ Game::~Game()
 bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WINDOW_SHOWN*/)
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
-        dLog("sdl init fail\n");
+        dPrint("sdl init fail\n");
         return false;
     }
     
     m_pWnd = SDL_CreateWindow(title.c_str(),x,y,w,h,flags);
     if(m_pWnd == NULL){
-        dLog("create window fail\n");
+        dPrint("create window fail\n");
         return false;
     }
 
     m_pRender = SDL_CreateRenderer(m_pWnd,-1,0);
     if(m_pRender == NULL){
-        dLog("create renderer fail\n");
+        dPrint("create renderer fail\n");
         return false;
     }
 
@@ -50,7 +50,7 @@ bool Game::init(std::string title,int x,int y,int w,int h,int flags /*= SDL_WIND
 
     //fixed me
     if(!TextureManager_Singleton().getInstance()->load("../assets/meinv3.jpeg","beauty",m_pRender)){
-        dLog("texture manager load fail\n");
+        dPrint("texture manager load fail\n");
         return false;
     }
 
@@ -96,7 +96,7 @@ void Game::clean()
 void Game::keyDownEv(const SDL_Event *ev)
 {
     if(ev->key.keysym.sym == SDLK_RETURN){
-        dLog("enter is down\n");
+        dPrint("enter is down\n");
         m_machine->changeState(new PlayState);
     }
 }
@@ -104,6 +104,6 @@ void Game::keyDownEv(const SDL_Event *ev)
 void Game::keyUpEv(const SDL_Event *ev)
 {
     if(ev->key.keysym.sym == SDLK_RETURN){
-        dLog("enter is up\n");
+        dPrint("enter is up\n");
     }
 }

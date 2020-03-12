@@ -24,8 +24,8 @@ static void dLog(const char *fmt,...)
 }
 
 #ifdef DEBUG
-#define dPrint(fmt,...) \
-   dLog(fmt,__VA_ARGS__)
+#define dPrint(fmt,args...) \
+   dLog(fmt,##args)
 #else
 #define dPrint(fmt,...)
 #endif
