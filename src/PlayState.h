@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameState.h"
+#include "Sprite.h"
 
 namespace SDL2
 {
@@ -12,6 +13,8 @@ public:
     virtual bool onEnter();
     virtual bool onExit();
     inline virtual std::string getStateId()const{ return s_playId; }
+
+    bool checkCollision(Sprite *s1,Sprite *s2);
 private:
     static const std::string s_playId;
 };

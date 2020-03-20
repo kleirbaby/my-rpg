@@ -7,6 +7,7 @@ namespace SDL2
 class Vector2D
 {
 public:
+    Vector2D(){}
     Vector2D(double x,double y):m_x(x),m_y(y){}
     ~Vector2D(){}
 
